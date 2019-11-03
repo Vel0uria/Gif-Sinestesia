@@ -1,8 +1,9 @@
 let myFont
 let flame = []
-let word = []
 let snow
 let snowflakes = []
+let words = []
+
 function preload(){
 
 	myFont = loadFont('data/Nice Dream Come True.ttf')
@@ -19,6 +20,7 @@ function preload(){
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	angleMode(DEGREES)
+	imageMode(CENTER)
 	//word = new Snow(100,100)
 snow = loadImage('data/580b585b2edbce24c47b2706.png')
 
@@ -37,10 +39,15 @@ background(30)
 // word.displayText()
 // pop()
 
-for(let i = 0; i<30; i=i+2){
+for(let i = 0; i<10; i++){
 	snowflakes[i].displaySnow()
-	//snowflakes[i].displayText(snowflakes[i])
-	
+
+if(snowflakes[i].y >= 500){
+
+snowflakes[i].displayText()
+
+}
+
 }
 
 
